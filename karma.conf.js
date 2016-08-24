@@ -7,6 +7,10 @@ module.exports = function(config) {
       'test/**/*.test.js'
     ],
 
+    browserDisconnectTolerance: 5,
+    browserDisconnectTimeout: 100000,
+    browserNoActivityTimeout: 100000,
+
     browsers: ['PhantomJS'],
 
     frameworks: ['browserify', 'mocha'],
@@ -21,7 +25,7 @@ module.exports = function(config) {
       mocha: {
         grep: process.env.GREP,
         reporter: 'html',
-        timeout: 10000
+        timeout: 60000
       }
     },
 
