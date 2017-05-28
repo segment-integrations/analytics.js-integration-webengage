@@ -172,8 +172,31 @@ describe('WebEngage', function() {
 
       it('should send mapped traits to their reserved WebEngage user attributes', function() {
         analytics.identify('id', {
+          name: 'John Doe',
           firstName: 'John',
           lastName: 'Doe',
+          email: 'johndoe@anonymous.org',
+          gender: 'male',
+          birthday: '1970-01-01',
+          phone: '333-444-1234',
+          company: 'Acme Inc'
+        });
+        analytics.called(window.webengage.user.login, 'id');
+        analytics.called(window.webengage.user.setAttribute, {
+          we_first_name: 'John',
+          we_last_name: 'Doe',
+          we_email: 'johndoe@anonymous.org',
+          we_gender: 'male',
+          we_birth_date: '1970-01-01',
+          we_phone: '333-444-1234',
+          we_company: 'Acme Inc',
+          id: 'id'
+        });
+      });
+
+      it('should still parse traits.name into first and last name', function() {
+        analytics.identify('id', {
+          name: 'John Doe',
           email: 'johndoe@anonymous.org',
           gender: 'male',
           birthday: '1970-01-01',
