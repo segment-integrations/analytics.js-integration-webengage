@@ -1,7 +1,7 @@
 {
   "name": "@segment/analytics.js-integration-webengage",
   "description": "The Webengage analytics.js integration.",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "keywords": [
     "analytics.js",
     "analytics.js-integration",
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/segment-integrations/analytics.js-integration-webengage#readme",
   "dependencies": {
     "@segment/analytics.js-integration": "^2.1.0",
+    "obj-case": "^0.2.0",
     "use-https": "^0.1.1"
   },
   "devDependencies": {
